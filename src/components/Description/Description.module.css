@@ -1,0 +1,11 @@
+.description {
+  margin: 0 auto;
+  text-align: center;
+  width: 75%;
+  color: aliceblue;
+  margin-top: -11rem;
+  background-color: rgba(57, 57, 57, 0.818);
+  padding: 4rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.6) 5px 15px 20px;
+}

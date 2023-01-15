@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+
+import Description from "./components/Description/Description";
+import Nav from "./components/Nav/Nav";
+import OrderList from "./components/OrderList/OrderList";
+import Popup from "./components/Popup/Popup";
 
 function App() {
+  const [isOverlay, setOverlay] = useState(true);
+
+  const closeOverlayHandler = () => {
+    setOverlay(false);
+  };
+
+  const openOverlayHandler = () => {
+    setOverlay(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {isOverlay ? <Popup onClose={closeOverlayHandler} /> : ""}
+      <Nav onOpen={openOverlayHandler}></Nav>
+      <section className="main">
+        <Description></Description>
+        <OrderList></OrderList>
+      </section>
+    </>
   );
 }
 
