@@ -1,5 +1,8 @@
 import ListItem from "./ListItem";
 import style from "./OrderList.module.css";
+
+
+
 const mangaCategory = [
   {
     id: 1,
@@ -27,10 +30,11 @@ const mangaCategory = [
   },
 ];
 const OrderList = () => {
+
   return (
     <ul className={style.orderlist}>
-      {mangaCategory.map((food) => {
-        return <ListItem key={food.id} {...food} />;
+      {mangaCategory.map((item) => {
+        return <ListItem key={item.id} {...item} />;
       })}
     </ul>
   );
